@@ -1,0 +1,23 @@
+server:
+  port: 3344
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: config-server3344
+    prefer-ip-address: true
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lin302798383/spring-cloud-configServer.git
+          search-paths:
+            - spring-cloud-configServer
+      label: main
+  application:
+    name: CLOUD-CONFIG-SERVER
